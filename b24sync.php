@@ -1,7 +1,7 @@
-<?php /** @noinspection ALL */
+<?php
 
 //  php test.php -m syncOperations -a C:\Users\user\Desktop\123\ Запуск скрипта из консоли пример
-    // test.php - название файла, syncOperations - название метода, C:\Users\user\Desktop\123\ - аргумент метода(путь до файла C:\Users\user\Desktop\123\test.csv)
+// test.php - название файла, syncOperations - название метода, C:\Users\user\Desktop\123\ - аргумент метода(путь до файла C:\Users\user\Desktop\123\test.csv)
 
 // Парсинг аргументов командной строки
 $options = getopt("m:a:", ["method:", "arg:"]);
