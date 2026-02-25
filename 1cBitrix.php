@@ -57,7 +57,7 @@ function fixDate($dateString) {
     //Подключение к б24, в аргумены передаем метод и массив данных
     function CurlBitrix24($method, $arData = array())
     {
-        $queryUrl = "https://mmp54.ru/rest/65/sxrzxvtscc6qvm44/" . $method;
+        $queryUrl = "YOUR_WEBHOOK_URL" . $method;
 
         try {
             $curl = curl_init();
@@ -349,5 +349,6 @@ function fixDate($dateString) {
         return $logMessage;
 
     };
+
 
 
