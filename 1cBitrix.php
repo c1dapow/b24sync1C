@@ -1,4 +1,4 @@
-<?php /** @noinspection ALL */
+<?php
 
 //  php test.php -m syncOperations -a C:\Users\user\Desktop\123\ Запуск скрипта из консоли пример
     // test.php - название файла, syncOperations - название метода, C:\Users\user\Desktop\123\ - аргумент метода(путь до файла C:\Users\user\Desktop\123\test.csv)
@@ -9,13 +9,12 @@ $options = getopt("m:a:", ["method:", "arg:"]);
 $method = $options['m'] ?? $options['method'] ?? null;
 $argument = $options['a'] ?? $options['arg'] ?? null;
 
-//$dir = realpath(__DIR__) . '\bitrix';
+
 if (!is_dir(realpath(__DIR__) . '\bitrix')) {
     mkdir(realpath(__DIR__) . '\bitrix', 0777, true); // PHP создаст папку от своего имени
 }
 
 if ($method && $argument) {
-    // Ваша логика обработки
     echo "Метод: $method\n";
     echo "Аргумент: $argument\n";
 
@@ -344,11 +343,10 @@ function fixDate($dateString) {
         $errorMsg = mb_convert_encoding($errorMsg, 'Windows-1251', 'UTF-8');
         file_put_contents(realpath(__DIR__) . '\bitrix' . '\sync_log.txt', $logMessage, FILE_APPEND);
         file_put_contents(realpath(__DIR__) . '\bitrix' . '\log.txt', $errorMsg, LOCK_EX);
-//	var_dump(realpath(__DIR__) . '\bitrix' . '\log.txt');
-//	Sleep(10);
         return $logMessage;
 
     };
+
 
 
 
